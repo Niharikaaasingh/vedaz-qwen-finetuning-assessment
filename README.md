@@ -96,3 +96,4 @@ vedaz-assessment/
 ## Notes
 
 The repository contains the complete fine-tuning pipeline, dataset preparation scripts, inference example, and configuration required to train the model on compatible GPU hardware.
+"# vedaz-qwen-finetuning-assessment" 
