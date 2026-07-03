@@ -1,0 +1,15 @@
+vedaz-assessment/
+│
+├── data/
+│   ├── vedaz.jsonl
+│   └── train.jsonl
+│
+├── outputs/
+│
+├── prepare_data.py
+├── prepare_dataset.py
+├── finetune.py
+├── inference.py
+├── requirements.txt
+├── README.md
+└── venv/
