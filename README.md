@@ -67,16 +67,15 @@ The model is designed to:
 
 ```text
 vedaz-assessment/
-
-├── data/
-│   ├── vedaz.jsonl
-│   └── train.jsonl
 │
+├── data/
+│   └── train.jsonl
 ├── prepare_dataset.py
 ├── finetune.py
 ├── inference.py
-├── requirements.txt
 ├── README.md
+├── requirements.txt
+└── WRITEUP.md
 ```
 
 ---
@@ -92,8 +91,61 @@ vedaz-assessment/
 * Accelerate
 
 ---
+## Sample Inference
+
+User:
+"Mera breakup ho gaya hai."
+
+Assistant:
+"Mujhe afsos hai ki aap is kathin samay se guzar rahe hain.
+Kripya ek minute pratiksha karein jab tak main kundli ka
+vishleshan kar raha hoon.
+
+Aapki kundli ke anusaar..."
+
+## LoRA Configuration
+
+- r = 16
+- alpha = 32
+- dropout = 0.05
+- target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
 
 ## Notes
 
 The repository contains the complete fine-tuning pipeline, dataset preparation scripts, inference example, and configuration required to train the model on compatible GPU hardware.
 "# vedaz-qwen-finetuning-assessment" 
+
+## Dataset Statistics
+
+- Total conversations: 55
+- Language: Hindi + English
+- Domains:
+  - Astrology
+  - Relationships
+  - Career
+  - Marriage
+  - Mental health
+  - Safety escalation
+ 
+    ## Safety Policy
+
+The model refuses:
+
+- Death predictions
+- Disease predictions
+- Guaranteed future events
+- Suicide advice
+- Harmful recommendations
+
+The model escalates:
+- Self-harm intent
+- Crisis situations
+- Severe emotional distress
+
+  Due to lack of GPU hardware on the local machine, the
+fine-tuning pipeline was implemented and prepared for
+execution on a CUDA-enabled environment.
